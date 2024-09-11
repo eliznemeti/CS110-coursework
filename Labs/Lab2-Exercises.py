@@ -1,3 +1,4 @@
+
 ### Exercise 2: String Manipulation ###
 
 # Print "Today is Wednesday." in as many different ways as you can (up to 3).

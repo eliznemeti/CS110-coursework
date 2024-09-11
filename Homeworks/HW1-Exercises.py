@@ -1,69 +1,92 @@
-# Exercise 1 
+## Name:
+## ID:
+## Initial below the statement:
+"""
+This code was my own work, it was written without consulting any sources
+outside of those approved by the instructor. 
+Initial: 
+"""
 
-# Print the number 10 and the string "10".
+# [10 pts] Question 1.  
 
-# Use the type() function to check the type of both.
+# Write a program to print 10, 10.0, “10.0”.  
 
-# What are the different types of 10 and "10"? (answer on sheet)
-
-
-# Exercise 2
-
-# Add two integers 5 and 10, and print the result.
-
-# Concatenate two strings '5' and '10', and print the result.
-
-# What is the difference between adding integers and concatenating strings? (answer on sheet)
+# Find the type of each and explain the differences between 10, 10.0, and “10.0”. (code + written)
 
 
 
-# Exercise 3
+# [15 pts] Question 2. 
 
-# Convert the string '100' into an integer and add 50 to it.
+# Print the expression that adds two integers, 5 and 10. 
 
-# Convert the integer 200 into a string and concatenate it with ' is the same as 2x100.'.
+# Concatenate two strings, '5' and '10', and print the result. 
 
-# What happens if you try to convert the string 'hello' to an integer? (answer on sheet)
-
-
-
-# Exercise 4
-
-# Assign the value 25 to a variable called age.
-
-# Print the value of age.
-
-# Reassign age to a new value of 'twenty-five' (a string).
-
-# Print the new value and check its type.
-
-# How does Python handle changes in variable types? (answer on sheet)
+# What is the difference between adding integers and concatenating strings? (written)
 
 
-# Exercise 5
+
+# [20 pts] Question 3.  
+
+# Verify if Python will accept the code below. Explain why or why not.  
+                # ‘100’ + 50 
+                        
+# Make changes if needed and print the result. 
+
+
+# Let x be ‘2’ and y be 100. 
+
+# Find the product of x and y and let the product have a variable name z. 
+
+# Concatenate it with ' is the same as 2x100.'. 
+
+# Make changes if needed and print the result. 
+
+# Explain what happens if you try to convert the string 'hello' to an integer? (code + written)
+
+
+
+# [10 pts] Question 4. 
+
+# Assign the value 25 to a variable called age. 
+
+# Print the value of age. 
+
+# Reassign age to a new value of 'twenty-five' (a string). 
+
+# Print the new value and check its type. 
+
+# How does Python handle changes in variable types? (written)
+
+
+
+# [15 pts] Question 5.
 
 # Assign values to three variables a, b, and c in a single line using tuple assignment. 
 
-# Print them in a single line, separated by commas.
+# Print them in a single line, separated by commas. 
 
-# Print them with custom formatting using the format() method, where a is left-aligned in 10 spaces and b and c are right-aligned in 10 spaces.
+# Print them with custom formatting using the format() method, where a is left-aligned in 10 spaces and b and c are right-aligned in 10 spaces. 
 
-# How does tuple assignment work? (answer on sheet)
-
-
-# Exercise 6
-
-# Prompt the user to enter their name.
-
-# Use \n to print a greeting on two lines.
-
-# Additionally, use \t to print their name indented with a tab.
-
-# How do control codes like \n and \t change the output formatting? (answer on sheet)
+# How does tuple assignment work? (written)
 
 
-# Exercise 7
 
-# Write a program that asks the user to input two numbers. Add these numbers together and print the result. Make sure to convert the input from strings to integers. 
+# [15 pts] Question 6.
 
-# What happens if the user enters a decimal number instead of an integer? (answer on sheet)
+# Prompt the user to enter their name. Use \n to print a greeting on two lines. 
+
+# Additionally, use \t to print their name indented with a tab. 
+
+# How do control codes like \n and \t change the output formatting? (written)
+
+
+
+# [15 pts] Question 7.
+
+# Write a program that asks the user to input two floating-point numbers.  
+
+# Apply addition, subtraction, multiplication, and division between two numbers.  
+
+# Print the result of each operation after rounding it up to the thousandth place.  
+
+# What happens if the user enters integers instead of decimal numbers? (code + written)
