@@ -1,3 +1,10 @@
+## Name:
+## ID:
+"""
+This code was my own work, it was written without consulting any sources
+outside of those approved by the instructor. 
+Initial: 
+"""
 
 ### Exercise 2: String Manipulation ###
 

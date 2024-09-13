@@ -1,10 +1,18 @@
+## Name:
+## ID:
+"""
+This code was my own work, it was written without consulting any sources
+outside of those approved by the instructor. 
+Initial: 
+"""
+
 ### Exercise 2: String Manipulation ###
 
 # Print "Today is Wednesday." in as many different ways as you can (up to 3).
 # Hint: Pay attention to spaces between words when using concatenation or other methods.
 
 print("Today is Wednesday.")
-print("Today" + " " + "is" " " + "Wednesday.")
+print("Today" + " " + "is" + " " + "Wednesday.")
 print("Today", "is", "Wednesday.")
 
 ### Exercise 2: Username Generator ###
