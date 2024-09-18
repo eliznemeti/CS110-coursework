@@ -1,9 +1,17 @@
-print("Hey there! What is your name?")
-print("What city did you grow up in?")
-print("What is your favorite number?")
+# Task 1
+print("Today is Wednesday.")
 
-user_name = input("Bob")
-user_city = input("Austin")
-user_number = input("5,476")
+print("Today" + " " + "is" + " " + "Wednesday" + ".")
 
-print("hello " + user_name + '!' + " welcome from " + user_city + ". I like the number " + user_number + " too!\n")
+print("Today is {}.".format("Wednesday"))
+
+# Task 2
+print("Welcome to the Username Generator!")
+
+user_city = input("Enter the city you grew up in: ")
+
+favorite_number = input("Enter your favorite number: ")
+
+username = user_city + " " + favorite_number
+
+print(f"Your new username is: {username}")
