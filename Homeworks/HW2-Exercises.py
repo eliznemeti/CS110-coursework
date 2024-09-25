@@ -46,7 +46,7 @@ Initial:
 
 # [5 pts] (Code) What are the values of x, y, and z after the code runs? Print them. 
 
-# [5 pts] (Written) How does variable storage work and and how can losing track of variables cause bugs in more complex programs? 
+# [5 pts] (Written) How does variable storage work and how can losing track of variables cause bugs in more complex programs? 
 
 
 # Question 4: Unary Operators
