@@ -8,13 +8,10 @@ Initial:
 
 # [10 pts] Exercise 1: Booleans # 
 
-# [2 pts] Create three variables x, y, and z. Assign them as 5, 10, and 0 respectively. 
-x = 5
-y = 10
-z = 0
+# [2 pts] Cr
+
 
 # Compare the variables using comparison operators <, !=, ==, >=.
-# For each comparison, print the boolean result. 
 
 # [2 pts] Check if x is less than y.
 print("x < y:", x < y) 
