@@ -1,51 +1,34 @@
-# ## Name:Kevin
-# ## ID:kzha296
-# """
-# This code was my own work, it was written without consulting any sources
-# outside of those approved by the instructor. 
-# Initial: KZ
-# """
+# Question 6: .format() Method with Single-Line Strings (Part 1)
+# [7 pts] (Code) 
+# Use the .format() method to print the message: 
+# "My name is <your name> and I am <your age> years old."
 
-# [5 pts] Task 1 # 
+# [3 pts] (Written) Name up to 3 reasons why using .format() method makes the code more readable compared to concatenating strings with +?
 
-# [5 pts] Fix the Python program. It should use a while loop to count numbers from 1 to 10 and print them correctly. 
-
-count = 0
-while count < 10:
-    count += 1
-    print(count)
-    
-# [5 pts] Task 2 # 
-
-# Modify the program to count from 1 to 50 but print only the numbers that are divisible by 5 below.
-
-count = 0
-while count <50:
-    count += 1
-    if count%5==0:
-        print(count)
+your_name="Kevin"
+your_age="18"
+print("My name is {} and I am {} years old.".format(your_name,your_age))
+print("By using the format function, I'm able to put make my long sentences much shorter, avoiding the usage of back slashes like I have previously used\
+      It's also better because I don't have to enter the same name or number again and can just put in a variable instead.\
+      If I want to change a the name that appears multiple times then I can do that once and all of the names in the string will change, making it much easier than having to change each name. ")
 
 
-# [10 pts] Task 3 # 
-# Write a Python program that repeatedly asks the user to input an integer until the user enters a negative integer. 
-# The program should calculate the sum of (only) the positive numbers entered by the user.
+# Question 7: .format() Method with Multi-Line Strings (Part 2)
 
-# [1 pts] Create a variable to store the final sum below.
+# [15 pts] (Code) 
+# Write a Python program that asks user input for two questions:
+# Why they are taking the course?
+# What interests them most about Python? 
+# Use a multi-line string with triple quotes to display their answers in the following format:
 
-# [1 pts] Create a variable to store the user's input below
+# My Course Reflection
+# I'm taking this course because: <user answer>
+# What excites me most about learning Python is: <user answer>
 
-# [6 pts] Initiate the while loop to ask for user input and accumulate the sum below.
-
-# [2 pts] Print the total sum, excluding the negative number that stops the loop below.
-final = 0
-done = False
-while not done:
-    entry = int(input("Please input an integer: "))
-    if entry < 0:
-        done= True
-        print("This code is done")
-    else:
-        final=final+entry
-        print("The total sum is:", final)
-
-       
+# [5 pts] (Written) What benefits can you observe from using triple quotes instead of adding \n at every line?
+x=input("Why are you taking this course:")
+y=input("What interests you most about python:")
+print(f"""My Course reflection
+I'm taking this course because {x}
+What excites me most about learning Python is {y}""")
+print("It's more convenient because having to add commas and \n everytime is tedious and prone to error")
