@@ -29,3 +29,4 @@ while count <= 10:
 # [6 pts] Initiate the while loop to ask for user input and accumulate the sum below.
 
 # [2 pts] Print the total sum, excluding the negative number that stops the loop below.
+
