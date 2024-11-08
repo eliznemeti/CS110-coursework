@@ -1,0 +1,142 @@
+## Name:
+## ID:
+## Initial below the statement:
+"""
+This code was my own work, it was written without consulting any sources
+outside of those approved by the instructor. 
+Initial: 
+"""
+
+"""
+CS 110: Computer Science Fundamentals 
+Homework 5 Instructions
+
+Make sure to test each condition once to ensure it works.
+For example, if you are using a function, test it with different inputs to ensure it behaves correctly.
+For each question, paste one example of the input/output as a comment below.
+
+Tip: To rerun a question multiple times, comment out the rest of the code using cmd+/ (Mac) or ctrl+/ (Windows/Linux).
+When done, uncomment to test the program again.
+
+Your code must run successfully without syntax errors to receive full points.
+Submit only your .py file. 
+"""
+
+"""
+[20 pts] Question 1: Counting Vowels
+
+Write a function named count_vowels that takes a string as input and returns the count of vowels (a, e, i, o, u) in the string, ignoring case.
+Use the function to prompt the user for a sentence and print the number of vowels in it.
+"""
+print("Question 1")
+# Write code below. Paste the input/output as a comment below. Make sure it runs without error. #
+
+def count_vowels(text):
+    vowels = "aeiou" # Define a string containing all vowels for easy checking
+    count = sum(1 for char in text.lower() if char in vowels) # "for each letter in the text, give me a 1 if it’s a vowel." -> generator expression. 1 for char in text.lower() if char in vowels, is the generator expression. It’s like a mini-loop that only produces a 1 each time it sees a vowel and passes each 1 to sum() immediately, without storing them all in a list.
+    return count # Return the total count of vowels found
+
+user_input = input("Enter a sentence: ")
+print("Number of vowels:", count_vowels(user_input))
+
+# Input: "Hello World"
+# Output: Number of vowels: 3
+
+"""
+[20 pts] Question 2: Filtering Even Numbers with Lambda
+
+Write a Python program that asks the user to input a list of integers (comma-separated). Use a lambda function to create a new list containing only the even numbers from the original list.
+Print both the original list and the list of even numbers.
+"""
+print("Question 2")
+# Write code below. Paste the input/output as a comment below. Make sure it runs without error. #
+
+user_input = input("Enter a list of integers (comma-separated): ")
+numbers = list(map(int, user_input.split(','))) # Convert the comma-separated string to a list of integers using map
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers)) # Use filter and a lambda function to create a new list containing only even numbers
+
+print("Original list:", numbers)
+print("Even numbers:", even_numbers)
+
+# Input: "1, 2, 3, 4, 5, 6"
+# Output: Original list: [1, 2, 3, 4, 5, 6]
+#         Even numbers: [2, 4, 6]
+
+"""
+[20 pts] Question 3: Recursive Power Function
+
+Write a recursive function named power that calculates the result of a base number raised to an exponent (e.g., power(base, exponent)).
+Prompt the user to enter the base and exponent, and use the power function to calculate and print the result.
+"""
+print("Question 3")
+# Write code below. Paste the input/output as a comment below. Make sure it runs without error. #
+
+def power(base, exponent):
+    if exponent == 0: # Base case: if the exponent is 0, return 1 (any number raised to 0 is 1)
+        return 1
+    return base * power(base, exponent - 1) # Recursive case: multiply base by the result of power(base, exponent - 1)
+
+base = int(input("Enter the base: "))
+exponent = int(input("Enter the exponent: "))
+print("Result:", power(base, exponent))
+
+# Input: base = 2, exponent = 3
+# Output: Result: 8
+
+
+"""
+[20 pts] Question 4:  Recursive Character Count Function
+
+Write a recursive function named count_character that counts the occurrences of a specific character in a given string.
+Prompt the user to enter a string and a character they want to count.
+Print the number of times the character appears in the string.
+"""
+print("Question 4")
+# Write code below. Paste the input/output as a comment below. Make sure it runs without error. #
+
+def count_character(string, char): # Base case: if the string is empty, return 0 (no characters to count)
+    if not string:
+        return 0
+    count = 1 if string[0] == char else 0 # Check if the first character in the string matches the target character
+    return count + count_character(string[1:], char) # Add the count (1 or 0) to the result of calling count_character on the rest of the string
+
+string = input("Enter a string: ")
+char = input("Enter a character to count: ")
+print("Occurrences of character:", count_character(string, char))
+
+# Input: string = "hello", char = "l"
+# Output: Occurrences of character: 2
+
+"""
+[20 pts] Question 5: Random Number Guessing Game
+
+Create a random number guessing game where the program:
+1. Generates a random number between 1 and 100.
+2. Prompts the user to guess the number.
+3. Provides feedback on whether the guess is too low (for numbers less than target), too high (for numbers higher than target), or correct.
+4. Measures the time taken to guess the number.
+"""
+print("Question 5")
+# Write code below. Paste the input/output as a comment below. Make sure it runs without error. #
+
+import random # Import random module to generate a random number
+import time   # Import time module to measure elapsed time
+
+target = random.randint(1, 100) # Generate random integer between 1 and 100
+start_time = time.time() # Record the start time for timing the game
+guess = None # Initialize a guess variable to store the user's guesses
+
+while guess != target: # Loop until the user guesses the correct number
+    guess = int(input("Guess a number between 1 and 100: ")) # Prompt the user to enter a guess and convert it to an integer
+    if guess < target: # Check if the guess is less than the target and give feedback
+        print("Too low!")
+    elif guess > target: # Check if the guess is greater than the target and give feedback
+        print("Too high!") 
+    else: # If the guess is correct, print a success message
+        print("Correct!")
+
+elapsed_time = time.time() - start_time # Calculate the total time taken to guess correctly by subtracting start_time from current time
+print(f"You guessed the number in {elapsed_time:.2f} seconds.") # Print the total time taken to guess the number, rounded to two decimal places
+
+# Input sequence: 50 (Too low), 75 (Too high), 60 (Correct)
+# Output: Correct! You guessed the number in 56.6 seconds.
