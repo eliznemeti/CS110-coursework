@@ -1,3 +1,11 @@
+## Name:
+## ID:
+"""
+This code was my own work, it was written without consulting any sources
+outside of those approved by the instructor. 
+Initial: 
+"""
+
 # Task 1 - Multiplication Table (5 pts)
 
 # (1 pt) Defining the function named multiplication_table with a parameter number

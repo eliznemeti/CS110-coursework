@@ -1,10 +1,10 @@
-# ## Name:
-# ## ID:
-# """
-# This code was my own work, it was written without consulting any sources
-# outside of those approved by the instructor. 
-# Initial: 
-# """
+## Name:
+## ID:
+"""
+This code was my own work, it was written without consulting any sources
+outside of those approved by the instructor. 
+Initial: 
+"""
 
 # [5 pts] Task 1 # 
 

@@ -1,27 +1,20 @@
+# TASK 1:
+n = int(input("Enter your number here:"))
+def calculate_square_and_cube(n):
+    x = lambda n: n**2
+    y = lambda n: n**3
+    return x(n),y(n)
+x, y = calculate_square_and_cube(n)
+print(x,y)
 
-"""
-[20 pts] Question 5
+# TASK 2:
+def sum_up_to(n):
+    if n==0:
+        return 0
+    else:
+        return n + sum_up_to(n-1)
+user = int(input("enter a number to sum:"))
+print (sum_up_to(user))
 
-Write a program that takes a user's grade as input and categorizes it as follows:
-- If the grade is 90 or higher, print "A".
-- If the grade is between 80 and 89, print "B".
-- If the grade is between 70 and 79, print "C".
-- If the grade is between 60 and 69, print "D".
-- If the grade is below 60, print "F".
-Hint: make sure to use each at least once: if, elif, and else.
-Hint: make sure the number entered is within a valid range.
-"""
-print("Question 5")
-# Write code below. Paste the input/output of each condition as a comment below. Make sure it runs without error. #
 
-g = int(input("Please enter your integer grade: "))
-if g>=90:
-    print("A")
-elif g>=80 and g<=89:
-    print("B")
-elif g>=70 and g<=79:
-    print("C")
-elif g>=60 and g<=69:
-    print("D")
-else:
-    print("F")
+
