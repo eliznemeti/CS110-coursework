@@ -1,5 +1,6 @@
 ## Name:
 ## ID:
+## Save this file as yourname_cs110_lab6.py and submit it to Canvas.
 """
 This code was my own work, it was written without consulting any sources
 outside of those approved by the instructor. 
