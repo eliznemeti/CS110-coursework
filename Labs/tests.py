@@ -1,37 +1,21 @@
-# user_input = input("Enter a list of integers (comma-separated): ")
-# numbers = list(map(int, user_input.split(','))) # Convert the comma-separated string to a list of integers using map
-# even_numbers = list(filter(lambda x: x % 2 == 0, numbers)) # Use filter and a lambda function to create a new list containing only even numbers
+from Ahmed_cs110_lab11_Book import Book
 
-# print("Original list:", numbers)
-# print("Even numbers:", even_numbers)
-
-# #v2
-
-# user_input = input("Enter a list of integers (comma-separated): ")
-# numbers = list(map(int, user_input.split(',')))  
-
-# even_numbers = []
-
-# for num in numbers:
-#     if num % 2 == 0:  
-#         even_numbers.append(num)  
-
-# print("Original list:", numbers)  
-# print("Even numbers:", even_numbers)  
+book1 = Book("1984", "George Orwell", 3)
+book2 = Book("The Hobbit", "J.R.R. Tolkien", 2)
 
 
-print("Question 4")
-# Write code below. Paste the input/output as a comment below. Make sure it runs without error. #
+book1.borrow_book()
 
-def count_character(string, char): # Base case: if the string is empty, return 0 (no characters to count)
-    if not string:
-        return 0
-    count = 1 if string[0] == char else 0 # Check if the first character in the string matches the target character
-    return count + count_character(string[1:], char) # Add the count (1 or 0) to the result of calling count_character on the rest of the string
+book2.borrow_book()
 
-string = input("Enter a string: ")
-char = input("Enter a character to count: ")
-print("Occurrences of character:", count_character(string, char))
+book2.borrow_book()
 
-# Input: string = "hello", char = "l"
-# Output: Occurrences of character: 2
+book1.return_book()
+book2.borrow_book()
+
+
+book2.return_book()
+
+
+book1.detail_book()
+book2.detail_book()

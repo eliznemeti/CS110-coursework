@@ -13,6 +13,7 @@ number_list = list(range(1, 21))
 print("Initial list:", number_list)
 
 # [6 pts] Remove every 3rd element in number_list, starting from the first element
+# e.g. remove the elements at index 2, index 5, index 8, and so on, because index 0 is the 1st element
 # Hint: Use slicing and element removal
 del number_list[2::3]
 # Another solution:
