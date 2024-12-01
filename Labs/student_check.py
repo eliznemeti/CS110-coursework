@@ -1,26 +1,43 @@
+#Task 1
 
-class Book:
-    def __init__(self, title, author, copies):
-        self.title = title
-        self.author = author
-        self.copies = copies
-        self.original_copies = copies  
+from graphics import * 
 
-    def detail_book(self):
-        print(f"Title: {self.title}, Author: {self.author}, Available Copies: {self.copies}")
+class ShapeManager:
+    def __init__ (self, win_title, win_width, win_height, color):
+        self.shapes = []
+        self.win = GraphWin(win_title, win_width, win_height)
+        self.win.setCoords(0.0, 0.0, 10.0, 10.0)
+        self.win.setBackground(color)
+    
+    def add_circle(self, center, radius, color):
+        circle = Circle(Point(center[0], center[1]), radius)
+        circle.setFill(color)
+        circle.draw(self.win)
+        self.shapes.append(circle)
+    
+    def add_rectangle(self, bottom_left, top_right, color):
+        rec = Rectangle(Point(bottom_left[0], bottom_left[1]), Point(top_right[0], top_right[1]))
+        rec.setFill(color)
+        rec.draw(self.win)
+        self.shapes.append(rec)
 
-    def borrow_book(self):
-        if self.copies > 0:
-            self.copies -= 1
-            print(f"Borrowed: {self.title}. Remaining Copies: {self.copies}")
-        else:
-            print(f"{self.title} is unavailable.")
+    def change_color(self, index, color):
+        if 0 <= index < len(self.shapes):
+            shape = self.shapes[index]
+            shape.setFill(color)
 
-    def return_book(self):
-        if self.copies < self.original_copies:
-            self.copies += 1
-            print(f"Returned: {self.title}. Updated Copies: {self.copies}")
-            if self.copies == self.original_copies:
-                print(f"{self.title} is fully returned.")
-        else:
-            print(f"All copies of {self.title} are already in the library.")
+    def delete_shape(self, index):
+        if 0 <= index < len(self.shapes):
+            shape = self.shapes.pop(index)
+            shape.undraw()
+
+def main():
+    shape_manager = ShapeManager("Shape Manager", 400, 400, "white")
+    shape_manager.add_circle(center=(2,2), radius=2, color='red')
+    shape_manager.add_rectangle(bottom_left=(3,3), top_right = (6,5), color='blue')
+    shape_manager.add_circle(center=(2,2), radius=1, color='green')
+    shape_manager.win.getMouse()
+    shape_manager.win.close()
+
+if __name__ == "__main__":
+    main()
