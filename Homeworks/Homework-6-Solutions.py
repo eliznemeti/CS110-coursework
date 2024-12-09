@@ -7,8 +7,17 @@ Initial:
 """
 
 # [20 pts] Question 1 - List Manipulation 
+# Option 1
+# def filter_odd_numbers(numbers):
+#     return [num for num in numbers if num % 2 != 0] 
+
+#Option 2
 def filter_odd_numbers(numbers):
-    return [num for num in numbers if num % 2 != 0]
+    odd_numbers = []  # Create an empty list to store odd numbers
+    for num in numbers:  # Loop through each number in the list
+        if num % 2 != 0:  # Check if the number is odd
+            odd_numbers.append(num)  # Add the odd number to the list
+    return odd_numbers  # Return the list of odd numbers
 
 user_input = input("Enter a list of integers (comma-separated): ")
 numbers = [int(num.strip()) for num in user_input.split(",")]

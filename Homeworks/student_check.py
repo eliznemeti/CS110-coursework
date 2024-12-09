@@ -1,10 +1,10 @@
-## Name:
-## ID:
+## Name: Senay Hailu
+## ID: 2667131
 ## Initial below the statement:
 """
 This code was my own work, it was written without consulting any sources
 outside of those approved by the instructor. 
-Initial: 
+Initial: SH
 """
 
 """
@@ -36,19 +36,22 @@ No discount if not divisible by 3 or 5.
 Write a program that asks the user to input the number of items purchased and prints which discount they get.
 """
 print("Question 1")
-# Write code below. Paste the input/output of each condition as a comment below. Make sure it runs without error. #
-
 items = int(input("Enter the number of items purchased: "))
 
+# Input/Output Examples:
+# Input: 1 Output: No discount available.
+# Input: 3 Output: You get a 10% discount!
+# Input: 5 Output: You get a 5% discount!
+# Input: 15 Output: You get a 15% discount!
+
 if items % 3 == 0 and items % 5 == 0:
-    print("You get a 15% discount for bulk purchases!")
+    print("You get a 15% discount!")
 elif items % 3 == 0:
     print("You get a 10% discount!")
 elif items % 5 == 0:
     print("You get a 5% discount!")
 else:
     print("No discount available.")
-
 
 """
 [20 pts] Question 2
@@ -60,11 +63,14 @@ Write a program that asks the user to input their age and checks if they are eli
 If the customer qualifies, print "Discount eligibility: Yes". If they do not qualify, print "Discount eligibility: No".
 """
 print("Question 2")
-# Write code below. Paste the input/output of each condition as a comment below. Make sure it runs without error. #
-
 age = int(input("Enter your age: "))
 
-if (10 <= age <= 50) or (age % 7 == 0):
+# Input/Output Examples:
+# Input: 25 Output: Discount eligibility: Yes
+# Input: 14 Output: Discount eligibility: Yes
+# Input: 55 Output: Discount eligibility: No
+
+if 10 <= age <= 50 or age % 7 == 0:
     print("Discount eligibility: Yes")
 else:
     print("Discount eligibility: No")
@@ -77,11 +83,14 @@ The program should print "Leap year" if the year is divisible by 4 but not divis
 Otherwise, print "Not a leap year".
 """
 print("Question 3")
-# Write code below. Paste the input/output of each condition as a comment below. Make sure it runs without error. #
-
 year = int(input("Enter a year: "))
 
-if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+# Input/Output Examples:
+# Input: 2024 Output: Leap year
+# Input: 2000 Output: Leap year
+# Input: 1900 Output: Not a leap year
+
+if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
     print("Leap year")
 else:
     print("Not a leap year")
@@ -94,22 +103,26 @@ The program should ask the user to input the amount they want to withdraw and re
 - If the amount is greater than $1000, print "Large transaction, approval required."
 - If the amount is between $500 (inclusive) and $1000, print "Transaction in review."
 - If the amount is less than $500:
-    - If the amount is less than $10, do nothing here for smaller transactions by using the pass statement.
+    - If the amount is less than $10, do nothing for small transactions by using the pass statement.
     - Otherwise, print "Transaction approved."
 """
 print("Question 4")
-# Write code below. Paste the input/output of each condition as a comment below. Make sure it runs without error. #
-
 withdrawal = float(input("Enter the amount you want to withdraw: "))
 
+# Input/Output Examples:
+# Input: 1500 Output: Large transaction, approval required.
+# Input: 700 Output: Transaction in review
+# Input: 25 Output: Transaction approved
+# Input: 5 Output: (Nothing happens due to the pass statement)
+
 if withdrawal > 1000:
-    print("Large transaction: Approval required.")
+    print("Large transaction, approval required.")
 elif 500 <= withdrawal <= 1000:
-    print("Transaction in review.")
+    print("Transaction in review")
 elif withdrawal < 10:
-    pass  
+    pass
 else:
-    print("Transaction approved.")
+    print("Transaction approved")
 
 """
 [20 pts] Question 5
@@ -124,18 +137,22 @@ Hint: make sure to use each at least once: if, elif, and else.
 Hint: make sure the number entered is within a valid range.
 """
 print("Question 5")
-# Write code below. Paste the input/output of each condition as a comment below. Make sure it runs without error. #
+grade = int(input("Enter your grade: "))
 
-grade = int(input("Enter a grade: "))
+# Input/Output Examples:
+# Input: 95 Output: A
+# Input: 85 Output: B
+# Input: 75 Output: C
+# Input: 65 Output: D
+# Input: 55 Output: F
 
 if grade >= 90:
     print("A")
-elif grade >= 80:
+elif 80 <= grade < 90:
     print("B")
-elif grade >= 70:
+elif 70 <= grade < 80:
     print("C")
-elif grade >= 60:
+elif 60 <= grade < 70:
     print("D")
 else:
     print("F")
-    
