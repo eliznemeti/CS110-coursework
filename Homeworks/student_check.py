@@ -1,158 +1,199 @@
-## Name: Senay Hailu
-## ID: 2667131
-## Initial below the statement:
-"""
-This code was my own work, it was written without consulting any sources
-outside of those approved by the instructor. 
-Initial: SH
-"""
+# ## Name: Kevin Zhang
+# ## ID: 2661252
+# """
+# This code was my own work, it was written without consulting any sources
+# outside of those approved by the instructor. 
+# Initial: KZ
+# """
 
-"""
-Homework 3 Instructions
+# Question 1
+# Write a function named filter_odd_numbers that takes a list of integers as input and returns a 
+# new list that contains only the odd numbers from the original list. 
+# Prompt the user to input a list of integers (comma-separated) and use the filter_odd_numbers 
+# function to display the odd numbers in the list. 
 
-Make sure to test each condition once to ensure it works. 
-For example, if a condition involves being divisible by 3 and 5, test numbers that satisfy one, both, and neither condition.
-For each condition, paste one example of the input/output as a comment below.
-Example comments for Question 1: 
-    Input: 1 Output: No discount available. 
-    Input: 3 Output: You get a 10% discount!
-    Etc.
 
-Tip: To rerun a question multiple times, comment out the rest of the code using cmd+/ (Mac) or ctrl+/ (Windows/Linux).
-When done, uncomment to test the program again.
-
-Your code must run successfully without syntax errors to receive full points.
-Submit only your .py file. 
-"""
-
-"""
-[20 pts] Question 1
-
-A grocery store is offering discounts based on the number of items a customer purchases:
-15% discount if the number of items is divisible by both 3 and 5.
-10% discount if divisible by 3 only.
-5% discount if divisible by 5 only.
-No discount if not divisible by 3 or 5.
-Write a program that asks the user to input the number of items purchased and prints which discount they get.
-"""
-print("Question 1")
-items = int(input("Enter the number of items purchased: "))
-
-# Input/Output Examples:
-# Input: 1 Output: No discount available.
-# Input: 3 Output: You get a 10% discount!
-# Input: 5 Output: You get a 5% discount!
-# Input: 15 Output: You get a 15% discount!
-
-if items % 3 == 0 and items % 5 == 0:
-    print("You get a 15% discount!")
-elif items % 3 == 0:
-    print("You get a 10% discount!")
-elif items % 5 == 0:
-    print("You get a 5% discount!")
+print ("Question 1")
+def filter_odd_numbers(numbers):
+    return list(filter(lambda x:x%2!=0, numbers))
+x = input("Enter a list of integers that are seperated with commas: ")
+original = list(int(num)for num in x.split(','))
+odd = filter_odd_numbers(original)
+print("The original list is", x)
+if not odd:
+    print("There are no odd numbers in the list")
 else:
-    print("No discount available.")
+    print("The list with only odd numbers is", odd)
 
-"""
-[20 pts] Question 2
+# Question 2: Weekday List Challenge
+# Create a list that represents the days of the week, with each day of the week as a string.
+# Perform the following tasks
+# 1. Create the list: Initialize a list that contains the days of the week (from "Monday" to
+# "Sunday").
+# 2. Access Days: Print the third day in the list (hint: use index 2).
+# 3. Change a Day: Change the last day in the list to "FunDay". Print the updated list.
+# 4. Add New Day: Add "Holiday" to the end of the list and print the updated list.
+# 5. Remove a Day: Remove "Wednesday" from the list and print the updated list
 
-A movie theater is offering discounts based on customer age. A customer qualifies for the discount if:
-- Their age is between 10 and 50 (inclusive).
-- Or, their age is a multiple of 7 (7, 14, 21, etc.).
-Write a program that asks the user to input their age and checks if they are eligible for the discount. 
-If the customer qualifies, print "Discount eligibility: Yes". If they do not qualify, print "Discount eligibility: No".
-"""
 print("Question 2")
-age = int(input("Enter your age: "))
+days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+days_string = ",".join(days)
+print(days)
+print("The third day in the list is", days[2])
+days[6]='FunDay'
+print("The new list is: ",days)
+days.append('Holiday')
+print("The new list is: ", days)
+days.remove('Wednesday')
+print("The new list is", days)
 
-# Input/Output Examples:
-# Input: 25 Output: Discount eligibility: Yes
-# Input: 14 Output: Discount eligibility: Yes
-# Input: 55 Output: Discount eligibility: No
 
-if 10 <= age <= 50 or age % 7 == 0:
-    print("Discount eligibility: Yes")
-else:
-    print("Discount eligibility: No")
+#  Question 3: Create a Simple Bank Account Class 
+# Write a class BankAccount that represents a simple bank account. The class should have the 
+# following: 
+# 1. Attributes: 
+# a. account_holder: The name of the account holder (string). 
+# b. balance: The current balance of the account (float). 
+# 2. Methods: 
+# a. deposit(amount): Adds the given amount to the balance. 
+# b. withdraw(amount): Subtracts the given amount from the balance (if there are 
+# enough funds). 
+# c. get_balance(): Returns the current balance. 
+# Tasks: 
+# 1. Create a BankAccount for a person named "Alice" with an initial balance of 1000. 
+# 2. Call the deposit() method on the Alice object to add 500 to her balance. 
+# 3. Use the withdraw() method to subtract 200 from Alice's account. 
+# 4. Use the get_balance() method to print Alice's final balance. 
 
-"""
-[20 pts] Question 3
-
-Write a program that asks the user for a year and then checks if it's a leap year.
-The program should print "Leap year" if the year is divisible by 4 but not divisible by 100, unless it's also divisible by 400.
-Otherwise, print "Not a leap year".
-"""
 print("Question 3")
-year = int(input("Enter a year: "))
 
-# Input/Output Examples:
-# Input: 2024 Output: Leap year
-# Input: 2000 Output: Leap year
-# Input: 1900 Output: Not a leap year
+class Bankaccount():
+    def __init__(self,account_holder,balance):
+        self.account_holder = account_holder
+        self.balance = float(balance)
+    def deposit(self,amount):
+        if amount <=0:
+            print("Please input a value greater than 0")
+        else:
+            self.balance += amount
+            return self.balance
 
-if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
-    print("Leap year")
-else:
-    print("Not a leap year")
 
-"""
-[20 pts] Question 4
+    def withdraw(self,amount):
+        if self.balance<0:
+            print("Insufficient funds")
+        else:
+            self.balance -= amount
+            return self.balance
 
-Write a program that simulates a simple bank transaction approval system. 
-The program should ask the user to input the amount they want to withdraw and respond according to the following conditions:
-- If the amount is greater than $1000, print "Large transaction, approval required."
-- If the amount is between $500 (inclusive) and $1000, print "Transaction in review."
-- If the amount is less than $500:
-    - If the amount is less than $10, do nothing for small transactions by using the pass statement.
-    - Otherwise, print "Transaction approved."
-"""
+    def get_balance(self):
+        if self.balance<0:
+            print("There is no more money left in the bank account")
+        else:
+            return self.balance
+    
+    def __str__(self):
+        return self.account_holder + " " + str(self.balance)
+
+
+account = Bankaccount("Alice", 1000)
+account.deposit(500)
+account.withdraw(200)
+account.get_balance()
+print(account)
+
+
+#  Question 4: Movie Class 
+# Create a class called Movie that represents a movie. The class should have the following 
+# attributes and methods: 
+# Attributes: 
+# • title: The title of the movie (string). 
+# • director: The name of the director (string). 
+# • year: The year the movie was released (integer). 
+# • rating: The rating of the movie (float, between 1 and 10). 
+# Methods: 
+# • get_info(): Returns a string with the movie’s title, director, year, and rating. 
+# • update_rating(new_rating): Updates the rating of the movie. 
+# Tasks: 
+# 1. Create a movie object with the title "Inception", directed by "Christopher Nolan", 
+# released in 2010, with a rating of 8.8. 
+# 2. Use the get_info() method to print out the details of the movie. 
+# 3. Use the update_rating() method to change the movie's rating to 9.2. 
+# 4. Print the updated details using get_info() again. 
+
 print("Question 4")
-withdrawal = float(input("Enter the amount you want to withdraw: "))
+class Movie():
+    def __init__(self,title,director,year,rating):
+        self.title = title
+        self.director = director
+        self.year = int(year)
+        self.rating = float(rating)
+    def get_info(self):
+        return {"Title":self.title,"Director":self.director,"Year":self.year,"Rating":self.rating}
+    def update_rating(self,new_rating):
+        self.rating = new_rating
+        return self.rating
 
-# Input/Output Examples:
-# Input: 1500 Output: Large transaction, approval required.
-# Input: 700 Output: Transaction in review
-# Input: 25 Output: Transaction approved
-# Input: 5 Output: (Nothing happens due to the pass statement)
 
-if withdrawal > 1000:
-    print("Large transaction, approval required.")
-elif 500 <= withdrawal <= 1000:
-    print("Transaction in review")
-elif withdrawal < 10:
-    pass
-else:
-    print("Transaction approved")
+movie = Movie("Inception","Christopher Nolan", 2010, 8.8)
+print(movie.get_info())
+movie.update_rating(9.2)
+print(movie.get_info())
+   
 
-"""
-[20 pts] Question 5
 
-Write a program that takes a user's grade as input and categorizes it as follows:
-- If the grade is 90 or higher, print "A".
-- If the grade is between 80 and 89, print "B".
-- If the grade is between 70 and 79, print "C".
-- If the grade is between 60 and 69, print "D".
-- If the grade is below 60, print "F".
-Hint: make sure to use each at least once: if, elif, and else.
-Hint: make sure the number entered is within a valid range.
-"""
+
+# Question 5: The School Yearbook 
+# Imagine you're working on a digital yearbook for a school. You have a table (a list of lists) that 
+# contains student information such as their name, grade, and favorite subject. Your task is to 
+# organize this data and perform a few operations on it. 
+# Here is the students table, which contains the following information: 
+# students = [ 
+# ["Alice", 10, "Math"],   # Name, Grade, Favorite Subject 
+# ["Bob", 11, "History"], 
+# ["Charlie", 10, "Science"], 
+# ["Daisy", 12, "Math"], 
+# ["Eve", 11, "Art"] 
+# ] 
+# Tasks: 
+# 1. What is the grade of Charlie? 
+# • Write a function find_grade(students, name) that takes the list of students and a 
+# student's name as input and returns the grade of that student. For example: 
+# find_grade(students, "Charlie")  # Expected Output: 10 
+# 2. Write a function find_favorite_subject(students, subject) that takes the list of 
+# students and a subject as input and prints the names of students whose favorite 
+# subject matches the input. If multiple students have the same favorite subject, print 
+# all their names. For example: 
+# find_favorite_subject(students, "Art")  # Expected Output: Eve 
+# 3. Write a function average_grade(students) that calculates and returns the average 
+# grade of all the students in the list.
 print("Question 5")
-grade = int(input("Enter your grade: "))
+students = [ ["Alice", 10, "Math"],  ["Bob", 11, "History"], ["Charlie", 10, "Science"], ["Daisy", 12, "Math"], ["Eve", 11, "Art"]]
 
-# Input/Output Examples:
-# Input: 95 Output: A
-# Input: 85 Output: B
-# Input: 75 Output: C
-# Input: 65 Output: D
-# Input: 55 Output: F
+def find_grade(students, name):
+    for student in students:
+        if student[0] == name:
+            return student[1]
+        else:
+            None
+        
+def find_favorite_subject(students,subject):
+    people = []
+    for student in students:
+        if student[2] == subject:
+            people.append(student[0])
+    return people
+        
 
-if grade >= 90:
-    print("A")
-elif 80 <= grade < 90:
-    print("B")
-elif 70 <= grade < 80:
-    print("C")
-elif 60 <= grade < 70:
-    print("D")
-else:
-    print("F")
+def average_grade(students):
+    total = sum(student[1] for student in students)
+    number = len(students)
+    return total/number
+
+Charlie = find_grade(students, "Charlie")
+print (Charlie)
+art = find_favorite_subject(students,"Art")
+print(art)
+grade = average_grade(students)
+print(grade)
+
